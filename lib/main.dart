@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: MaterialApp(
-        title: 'توصيل من المنزل للباب',
+        title: ' راحة' ,
         debugShowCheckedModeBanner: false,
         theme: _buildTheme(),
         home: const MainNavigationScreen(),

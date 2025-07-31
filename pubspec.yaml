@@ -33,6 +33,11 @@ dependencies:
   
   # Charts
   fl_chart: ^0.66.0
+  
+  # Maps and Location
+  google_maps_flutter: ^2.5.0
+  location: ^5.0.3
+  geolocator: ^10.1.0
 
 dev_dependencies:
   flutter_test:

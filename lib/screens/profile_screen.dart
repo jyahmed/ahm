@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
 import 'auth_screen.dart';
+import 'settings_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -141,6 +142,18 @@ class ProfileScreen extends StatelessWidget {
                     icon: Icons.notifications_outlined,
                     title: 'الإشعارات',
                     onTap: () => _showNotificationSettings(context),
+                  ),
+                  _buildMenuItem(
+                    icon: Icons.settings_outlined,
+                    title: 'الإعدادات',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SettingsScreen(),
+                        ),
+                      );
+                    },
                   ),
                 ]),
 
