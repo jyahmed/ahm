@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'order_tracking_screen.dart';
 
 class OrdersScreen extends StatefulWidget {
   const OrdersScreen({super.key});
@@ -256,7 +257,16 @@ class _OrdersScreenState extends State<OrdersScreen> with SingleTickerProviderSt
                   ),
                   TextButton(
                     onPressed: () {
-                      _showTrackingDialog(order);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => OrderTrackingScreen(
+                            orderId: order.id,
+                            restaurantName: order.restaurantName,
+                            deliveryAddress: 'العنوان الافتراضي - الرياض',
+                          ),
+                        ),
+                      );
                     },
                     child: const Text('تتبع الطلب'),
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_to_door_shopping_flutter/screens/settings_screen.dart';
 import 'package:provider/provider.dart';
 import '../widgets/restaurant_card.dart';
 import '../widgets/category_selector.dart';
@@ -126,6 +127,39 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('الرئيسية'),
+        centerTitle: true,
+        backgroundColor: AppColors.primary,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings_outlined),
+            onPressed: () {
+              Navigator.push(
+                       context,
+                        MaterialPageRoute(
+                       builder: (context) => const SettingsScreen(),
+                     ),
+                    );
+            }
+      ),]
+      ),
+// Widget build(BuildContext context) {
+//     return ChangeNotifierProvider<DashboardData>(
+//       create: (BuildContext context) => DashboardData(),
+//       builder: (BuildContext context, Widget? child) {
+//         return MaterialApp(
+//           title: 'Application Dashboard',
+//           theme: ThemeData(
+//             primarySwatch: Colors.blue,
+//             visualDensity: VisualDensity.adaptivePlatformDensity,
+//           ),
+//           home: const DashboardScreen(),
+//         );
+//       },
+//     );
+  // }
       backgroundColor: AppColors.background,
       body: SafeArea(
         child: FadeTransition(
@@ -133,6 +167,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           child: CustomScrollView(
             slivers: [
               // App Bar مخصص
+              
+             
               SliverAppBar(
                 expandedHeight: 120,
                 floating: true,
@@ -149,6 +185,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          
                           Text(
                             'مرحباً بك!',
                             style: TextStyle(
